@@ -8,6 +8,7 @@ const cors = require("cors");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const countriesRouter = require("./routes/countries");
+const postsRouter = require("./routes/posts");
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 app.use("/countries", countriesRouter);
+app.use("/posts", postsRouter);
 
 mongoose
   .connect(process.env.MONGODB_URI)
